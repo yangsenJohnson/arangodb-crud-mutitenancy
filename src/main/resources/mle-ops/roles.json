@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "roles",
+    "description": "Role Based Access Control, will use role as object to cover who spefic action to resources.",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "functions": {
+            "type": "array",
+            "description": "The function list that the UI will allow user to do",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "$ref": "#model/definitions/function"
+            }
+        },
+        "New property": {
+            "type": "string"
+        },
+        "creatorId": {
+            "type": "string",
+            "description": "The user id who creates the role"
+        },
+        "createOn": {
+            "type": "string",
+            "description": "The date time of the role being created",
+            "format": "date-time"
+        },
+        "state": {
+            "type": "number",
+            "description": "The state of the role",
+            "minimum": 1,
+            "maximum": 5
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

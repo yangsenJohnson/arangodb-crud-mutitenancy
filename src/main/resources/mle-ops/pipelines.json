@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "pipelines",
+    "description": "in mlflow, it's called job\nin kubeflow, it;s call pipeline",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "cpu": {
+            "type": "number",
+            "description": "the number of cpu needed"
+        },
+        "memory": {
+            "type": "string",
+            "description": "the amount of memory needed"
+        },
+        "session": {
+            "type": "string",
+            "description": "The session infor, which is linked with who is using this pipeline."
+        },
+        "featureJob": {
+            "type": "boolean",
+            "description": "true: this pipeline is to create feature list;\nfalse: normal ML job"
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

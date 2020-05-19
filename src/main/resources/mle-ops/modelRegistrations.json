@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "modelRegistrations",
+    "description": "Model Registry component is a centralized model store, set of APIs, and UI, to collaboratively manage the full lifecycle of an Model.\nIt provides model lineage (which experiment and run produced the model), model versioning, stage transitions (for example from staging to productƒion), and annotations.",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "registerTime": {
+            "type": "string",
+            "description": "The date and time of model registered",
+            "format": "date-time"
+        },
+        "updateOn": {
+            "type": "string",
+            "description": "The date time of model registry is updated",
+            "format": "date-time"
+        },
+        "stageVersion": {
+            "type": "string",
+            "description": "Indicate state of the model registry",
+            "enum": [
+                "ToArchive",
+                "ToProduct",
+                "ToNone"
+            ]
+        },
+        "creator": {
+            "type": "string",
+            "description": "the user who create this model registry"
+        },
+        "sourceRunId": {
+            "type": "string",
+            "description": "The runID of the experiment\nBy this runID, model metrics metadata can be retrieved from experiment"
+        },
+        "version": {
+            "type": "string",
+            "description": "the version of registry"
+        },
+        "artifact": {
+            "$ref": "#model/definitions/artifact"
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

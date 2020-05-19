@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "users",
+    "description": "The collection of user.",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "emails": {
+            "type": "array",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "type": "string",
+                "format": "email"
+            }
+        },
+        "displayName": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "avartar": {
+            "type": "object",
+            "description": "The avatar picture is displayed in the use profile",
+            "additionalProperties": false
+        },
+        "password": {
+            "type": "string",
+            "description": "Store the password which is encode64."
+        },
+        "creatorId": {
+            "type": "string",
+            "description": "the user created this usr"
+        },
+        "email": {
+            "type": "string",
+            "description": "The email address to receive the user registration information.",
+            "format": "email"
+        },
+        "organizationId": {
+            "type": "string",
+            "description": "The organization ID that the user belongs to . this is differnet to the Group"
+        },
+        "departmentName": {
+            "type": "string",
+            "description": "The name of department"
+        },
+        "employeeState": {
+            "type": "string",
+            "description": "The status of user account",
+            "enum": [
+                "locked",
+                "canceled",
+                "active"
+            ]
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

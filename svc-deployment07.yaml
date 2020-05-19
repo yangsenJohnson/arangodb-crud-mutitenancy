@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: myapp7-deploy
+
+  namespace: default
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: myapp7
+
+      release: stabel
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: myapp7
+
+        release: stabel
+
+        env: test
+
+    spec:
+
+      containers:
+
+      - name: myapp7
+        #这里注意是命名空间+仓库名称
+        #注意：latest版本号，远程仓库不认，需要对应版本号为1.0
+        image: registry.cn-hangzhou.aliyuncs.com/yangsenys/myapp7:1.0
+        #本地有的话取本地，没有的话取远程仓库
+        imagePullPolicy: IfNotPresent
+        command: [ "/bin/sh","-c","tail -f /dev/null" ]
+        envFrom:
+        - configMapRef:
+            name: demo-dev-confmap
+        ports:
+
+        - name: http
+
+          containerPort: 80

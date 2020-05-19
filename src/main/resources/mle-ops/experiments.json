@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "experiments",
+    "description": "model has many experiments, with different set of parameters",
+    "additionalProperties": true,
+    "properties": {
+
+        "name": {
+            "type": "string",
+            "description": "The name of experiment"
+        }
+
+    }
+
+}

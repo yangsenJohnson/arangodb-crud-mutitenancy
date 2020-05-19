@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "model-servings",
+    "description": "model serving is meant that the model is deployed on to destination env.",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "deployment": {
+            "$ref": "#model/definitions/deployment"
+        },
+        "apiUrl": {
+            "type": "string",
+            "description": "Model url in destination env",
+            "format": "uri"
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

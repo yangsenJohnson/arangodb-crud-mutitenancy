@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="testproj" parallel="false">
+    <test name="testController" preserve-order="true">
+        <classes>
+            <class name="com.bigdata.springboot.arangodbcrud.ADbCrudApplicationTestNG"/>
+            <methods>
+                <include name="queryComputersTest"/>
+                <include name="listDataSourceTest"/>
+                <include name="viewNotebookTest"/>
+                <include name="queryExperimentsByDateTest"/>
+                <include name="getTimeSecTest"/>
+                <include name="saveExperimentTest"/>
+            </methods>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "runs",
+    "description": "Create a new run within an experiment. A run is usually a single execution of a machine learning or data ETL pipeline. MLflow uses runs to track Param, Metric, and RunTag associated with a single execution.\n\n",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "runInfo": {
+            "$ref": "#model/definitions/runInfo"
+        },
+        "runData": {
+            "$ref": "#model/definitions/runData"
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

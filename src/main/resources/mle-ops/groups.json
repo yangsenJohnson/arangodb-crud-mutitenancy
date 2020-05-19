@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "groups",
+    "description": "The collection of user",
+    "additionalProperties": true,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "functions": {
+            "type": "array",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "$ref": "#model/definitions/function"
+            }
+        },
+        "name": {
+            "type": "string",
+            "description": "the name of the group"
+        },
+        "createdOn": {
+            "type": "string",
+            "description": "the date and time of group is created",
+            "format": "date-time"
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

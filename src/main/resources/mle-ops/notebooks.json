@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "notebooks",
+    "description": "A notebook is a web-based interface to a document that contains runnable code, visualizations, and narrative text.\n",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string",
+            "description": "the name of a notebook"
+        },
+        "externalFormats": {
+            "type": "string",
+            "enum": [
+                "python",
+                "R",
+                "scala"
+            ]
+        },
+        "attachedCluster": {
+            "type": "array",
+            "description": "A notebook can be attached many cluster, for computing",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "$ref": "#model/definitions/cluster"
+            }
+        },
+        "kernel": {
+            "$ref": "#model/definitions/kernelImage"
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

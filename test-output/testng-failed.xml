@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]">
+  <test name="arangodb-crud-mutitenancy(failed)">
+    <classes>
+      <class name="com.bigdata.springboot.arangodbcrud.ADbCrudApplicationTestNG">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="editdsTest"/>
+          <include name="editComputeTest"/>
+          <include name="deletedsTest"/>
+          <include name="deleteComputeTest"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="setup"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.bigdata.springboot.arangodbcrud.ADbCrudApplicationTestNG -->
+    </classes>
+  </test> <!-- arangodb-crud-mutitenancy(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

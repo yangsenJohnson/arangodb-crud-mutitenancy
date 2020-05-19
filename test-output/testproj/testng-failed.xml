@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [testproj]">
+  <test thread-count="5" name="testController(failed)">
+    <classes>
+      <class name="com.bigdata.springboot.arangodbcrud.ArangoDbAdapterTest">
+        <methods>
+          <include name="selectDatabaseTest"/>
+          <include name="dropCollectionTest"/>
+          <include name="getVelocyDocumentTest"/>
+          <include name="getDocumentTest"/>
+          <include name="createCollectionTest"/>
+          <include name="executeQueryTest2"/>
+          <include name="insertDocumentTest"/>
+          <include name="updateDocumentTest"/>
+          <include name="deleteDocumentTest"/>
+          <include name="setup"/>
+          <include name="executeQueryTest1"/>
+        </methods>
+      </class> <!-- com.bigdata.springboot.arangodbcrud.ArangoDbAdapterTest -->
+    </classes>
+  </test> <!-- testController(failed) -->
+</suite> <!-- Failed suite [testproj] -->

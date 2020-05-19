@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "data-appliances",
+    "description": "DataAppliace is the user's asset",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "appliances": {
+            "type": "array",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "$ref": "#/definitions/appliance(1)"
+            }
+        },
+        "the nem of the appliance": {
+            "type": "string"
+        },
+        "the time of the appliance is created": {
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "definitions": {
+        "appliance(1)": {
+            "type": "object",
+            "properties": {
+                "array of url address": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": [
+                        {
+                            "id": "name",
+                            "type": "string",
+                            "description": "Display name in UI"
+                        },
+                        {
+                            "id": "url",
+                            "type": "string",
+                            "description": "The value of address URL",
+                            "format": "uri"
+                        }
+                    ]
+                },
+                "ports": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": [
+                        {
+                            "id": "name",
+                            "type": "string",
+                            "description": "Name of the port,\ne.g. zookeeper port, data port, they will be used to be displayed in UI"
+                        },
+                        {
+                            "id": "port",
+                            "type": "number",
+                            "description": "The port number in integer format"
+                        }
+                    ]
+                },
+                "connectionStr": {
+                    "type": "string"
+                },
+                "if test this connection string": {
+                    "type": "boolean"
+                },
+                "if this asset is refered by any project": {
+                    "type": "string"
+                },
+                "keyWord": {
+                    "type": "string"
+                },
+                "asset name of appliance": {
+                    "type": "string"
+                },
+                "asset ID": {
+                    "type": "string"
+                },
+                "the SQL statement for retrieve data": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

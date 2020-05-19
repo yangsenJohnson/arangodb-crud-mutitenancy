@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "projects",
+    "description": "The collections of project",
+    "additionalProperties": true,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string",
+            "description": "The name of project. this is also can be display name"
+        },
+        "createOn": {
+            "type": "string",
+            "description": "The data time when this project is created",
+            "enum": [
+                ""
+            ],
+            "format": "date-time"
+        },
+        "dashboards": {
+            "type": "array",
+            "description": "One project may have multiple dashboards",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "$ref": "#model/definitions/dashboard"
+            }
+        },
+        "the list of data appliance id": {
+            "type": "array",
+            "description": "One project may have multiple dataAppliance.",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "id": "the id of the data appliance",
+                "type": "string"
+            }
+        },
+        "store the list of model id": {
+            "type": "array",
+            "description": "One project may have multiple models.",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}

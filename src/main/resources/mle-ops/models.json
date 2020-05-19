@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "models",
+    "description": "model is the central point of user assets",
+    "additionalProperties": false,
+    "properties": {
+        "_key": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string"
+        },
+        "_rev": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string",
+            "description": "the name of the model, can be display name"
+        },
+        "description": {
+            "type": "string",
+            "description": "the description of model."
+        },
+        "testTimes": {
+            "type": "string",
+            "description": "latest Experiment times."
+        },
+        "platform": {
+            "type": "string",
+            "description": "Indicate which platfom the model is trained.",
+            "enum": [
+                "jupyterNotebook",
+                "kubeflow"
+            ]
+        },
+        "isShared": {
+            "type": "boolean",
+            "description": "True: share with team\nFalse: no share with others"
+        },
+        "source": {
+            "type": "string",
+            "description": "source is different to the platform. \nSource describe the model algo is refered from"
+        },
+        "gitUrl": {
+            "type": "string",
+            "description": "The source code git repo"
+        },
+        "artefact": {
+            "type": "string",
+            "description": "Output files in any format. For example, you can record images, models (for example, a pickled scikit-learn model), and data files (for example, a Parquet file) as an artifact."
+        },
+        "distributed": {
+            "type": "boolean",
+            "description": "indicates if this model will be use distributed computing source;\ntrue: yes, will use kubeflow\nfalse: no, will use mkflow"
+        },
+        "featureList": {
+            "$ref": "#model/definitions/featureList"
+        }
+    },
+    "required": [
+        "_key",
+        "_id",
+        "_rev"
+    ]
+}
